@@ -6,6 +6,8 @@ It reminded me that one of the odd things about The Next Generation, compared to
 
 As a result, I made this an overly detailed graph of how The Next Generation stories map. It's completely subjective, especially Picard's stories. The choices reflect the episodes I enjoyed and remembered. 
 
+Link to the image https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TNG%20plot%20arcs.png
+
 I think my next steps would be:
 
 - Add in Seven of Nine's key episodes.
