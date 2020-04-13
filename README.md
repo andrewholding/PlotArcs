@@ -13,3 +13,5 @@ I think my next steps would be:
 - Add in Seven of Nine's key episodes.
 - Highlights the best 25 episodes to cover best plot arcs.
 - Consider how to include DS9 and Voyager character acts.
+
+[TNG Plot Arc](https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TNG%20plot%20arcs.png)
