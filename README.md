@@ -14,4 +14,4 @@ I think my next steps would be:
 - Highlights the best 25 episodes to cover best plot arcs.
 - Consider how to include DS9 and Voyager character acts.
 
-[TNG Plot Arc](https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TNG%20plot%20arcs.png)
+![TNG Plot Arc](https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TNG%20plot%20arcs.png)
