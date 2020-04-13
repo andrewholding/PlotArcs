@@ -1,4 +1,4 @@
-#Star Trek Plot Arcs as a Graph
+# Star Trek Plot Arcs as a Graph
 
 I found my daughter was watching Star Trek The Next Generation on Netflix this morning [https://twitter.com/AndrewHolding/status/1249657290015363072?s=20]. 
 
