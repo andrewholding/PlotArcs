@@ -8,6 +8,8 @@ As a result, I made this an overly detailed graph of how The Next Generation sto
 
 Link to the image https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TNG%20plot%20arcs.png
 
+Licensed under  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+
 I think my next steps would be:
 
 - Add in Seven of Nine's key episodes.
@@ -15,3 +17,4 @@ I think my next steps would be:
 - Consider how to include DS9 and Voyager character acts.
 
 ![TNG Plot Arc](https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TNG%20plot%20arcs.png)
+
