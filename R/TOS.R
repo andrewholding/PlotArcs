@@ -1,14 +1,18 @@
+#Settings
+Shift<-9/dev.size("cm")[1] #Will correct vertical bar positions, but only for the set size
+tick_shift <- 0.45 #How far ticks are from the main line
+text_shift <- 0.25 #How far text is from the link
 
-setwd("~/Desktop/plot arcs R")
+setwd("~/Desktop/PlotArcs/R")
 arcs<-read.csv("TOS.csv",stringsAsFactors = TRUE)
-
-looplink<-data.frame(index=c(3,4,7,8,9),var=c("Tribbles","Spock","Spock", "Kirk","Spock"),Label=c("Interesting","Interesting","Interesting","Love","Love"))
-
+looplink<-read.csv("links.csv",stringsAsFactors = TRUE)
+arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
 
 library(reshape2)
 arcs_long<-melt(arcs, id.vars=c("Index","Series","Episode","Name","Stardate"))
 
 arcs_long$Label<-paste0(arcs_long$Series," (",arcs_long$Episode,") ",arcs_long$Name)
+arcs_long$variable<-factor(gsub("[.]"," ",arcs_long$variable),levels=gsub("[.]"," ",names(arcs)[-1:-5]),ordered=TRUE)
 
 #Set up colours
 library(RColorBrewer)
@@ -16,19 +20,23 @@ mycolors<-colorRampPalette(brewer.pal(12, "Set3"))
 FillColors<-mycolors(length(levels(arcs_long$variable)))
 names(FillColors)<-as.character(levels(arcs_long$variable))
 
-#Will correct vertical bar positions, but only for the set size
-Shift<-2.40/dev.size("cm")[1]
+
 
 arcs_order <- paste0(arcs$Series," (",arcs$Episode,") ",arcs$Name)
 
+#Note - loops are linked the index, arcs[order(arcs$Episode),"Index"], if you 
+#Reorder episodes, then you will have to correct the links.
+
 #Start Plot
+library(ggplot2)
+library(ggpubr)
 p<-ggplot( 
-        data = arcs_long[arcs_long$value==1,], 
-        aes(
-            x=factor(Label, levels=arcs_order, ordered = TRUE),
-            y=factor(variable)
-            )
-        ) +
+    data = arcs_long[arcs_long$value==1,], 
+    aes(
+        x=factor(Label, levels=arcs_order, ordered = TRUE),
+        y=factor(variable)
+    )
+) +
     theme_pubr() +
     theme(    axis.line=element_blank(), 
               axis.ticks=element_blank(),
@@ -56,54 +64,66 @@ p<-p+ geom_path(
     size=1.5
 )
 
+
+
+#Interlinks
+p<-p+ geom_path(data=arcs_long[ arcs_long$value >0,],
+                aes(
+                    x=as.numeric(factor(Label, levels=arcs_order, ordered = TRUE))+Shift,
+                    y=factor(variable),
+                    group=Label
+                ),
+                
+                color="grey40",
+                size=0.8
+)
+
 #Loop links
-tick_shift <- 0.35 #How far ticks are from the main line
-text_shift <- 0.35 #How far text is from the main line
 
 q<-p
 for (LOI in as.character(unique(looplink$Label))) #LOI = label of interest
 {
-   q<- q+ geom_path(data=looplink[looplink$Label==LOI,],
-                 aes(
-                     x=as.numeric(index)+Shift,
-                     y=max(which(levels(arcs_long$variable) %in% var))+tick_shift,
-                     group=Label
-                 ),
-                 
-                 color="black",
-                 size=0.75
+    q<- q+ geom_path(data=looplink[looplink$Label==LOI,],
+                     aes(
+                         x=as.numeric(index)+Shift,
+                         y=max(which(levels(arcs_long$variable) %in% var))+tick_shift,
+                         group=Label
+                     ),
+                     
+                     color="black",
+                     size=0.75
     )
-   
-   
-   looplink_ticks<-rbind(cbind(looplink[looplink$Label==LOI,],
-                               Offset=rep(0,length(looplink[looplink$Label==LOI,"var"]))
-                               ),
-                            data.frame(  index=looplink[looplink$Label==LOI,"index"],
-                                         var=rep(levels(arcs_long$variable)[max(which(levels(arcs_long$variable) %in% looplink[looplink$Label==LOI,"var"]))],length(looplink[looplink$Label==LOI,"var"])),
-                                         Label=looplink[looplink$Label==LOI,"Label"],
-                                         Offset=rep(tick_shift,length(looplink[looplink$Label==LOI,"var"]))
-                                         )
-                            )
-   
-   looplink_ticks$var_index<-match(looplink_ticks$var, levels(arcs_long$variable)) 
-   
+    
+    
+    looplink_ticks<-rbind(cbind(looplink[looplink$Label==LOI,],
+                                Offset=rep(0,length(looplink[looplink$Label==LOI,"var"]))
+    ),
+    data.frame(  index=looplink[looplink$Label==LOI,"index"],
+                 var=rep(levels(arcs_long$variable)[max(which(levels(arcs_long$variable) %in% looplink[looplink$Label==LOI,"var"]))],length(looplink[looplink$Label==LOI,"var"])),
+                 Label=looplink[looplink$Label==LOI,"Label"],
+                 Offset=rep(tick_shift,length(looplink[looplink$Label==LOI,"var"]))
+    )
+    )
+    
+    looplink_ticks$var_index<-match(looplink_ticks$var, levels(arcs_long$variable)) 
+    
     q<-q+ geom_path(data=looplink_ticks[order(looplink_ticks$index),],
-                 aes(
-                     x=index+Shift,
-                     y=match(var, levels(arcs_long$variable))+Offset,
-                     group=index
-                 ),
-                 
-                 color="black",
-                 size=0.75
+                    aes(
+                        x=index+Shift,
+                        y=match(var, levels(arcs_long$variable))+Offset,
+                        group=index
+                    ),
+                    
+                    color="black",
+                    size=0.75
     )
     
     looplink_text<-data.frame(index=mean(looplink_ticks[looplink_ticks$Offset==0,"index"]),
-                             var=looplink_ticks[looplink_ticks$Offset==0,"var"][1],
-                             Label=looplink_ticks[looplink_ticks$Offset==0,"Label"][1],
-                             Offset=looplink_ticks[looplink_ticks$Offset==0,"Offset"][1],
-                             var_index=max(looplink_ticks[looplink_ticks$Offset==0,"var_index"])
-                                )
+                              var=looplink_ticks[looplink_ticks$Offset==0,"var"][1],
+                              Label=looplink_ticks[looplink_ticks$Offset==0,"Label"][1],
+                              Offset=looplink_ticks[looplink_ticks$Offset==0,"Offset"][1],
+                              var_index=max(looplink_ticks[looplink_ticks$Offset==0,"var_index"])
+    )
     
     
     q<-q+ geom_text(data=looplink_text,
@@ -119,33 +139,19 @@ for (LOI in as.character(unique(looplink$Label))) #LOI = label of interest
 }
 p<-q
 
-
-#Interlinks
-p<-p+ geom_path(data=arcs_long[ arcs_long$value >0,],
-             aes(
-                 x=as.numeric(factor(Label, levels=arcs_order, ordered = TRUE))+Shift,
-                 y=factor(variable),
-                 group=Label
-             ),
-             
-             color="grey70",
-             size=0.8
-)
-
-
 #Solid Circles
 p <- p +    
-        geom_dotplot(data=arcs_long[arcs_long$value==1,],
-            binaxis="y",
-            aes(fill=factor(variable), color=factor(variable)),
-            color="black"
-        ) 
+    geom_dotplot(data=arcs_long[arcs_long$value==1,],
+                 binaxis="y",
+                 aes(fill=factor(variable), color=factor(variable)),
+                 color="black"
+    ) 
 #Open circles
 p<-p +  
     geom_dotplot(data=arcs_long[arcs_long$value==2,],
-        binaxis="y",
-        aes(color=factor(variable)),
-        fill="white"
+                 binaxis="y",
+                 aes(color=factor(variable)),
+                 fill="white"
     )
 
 #Tidy Axis
