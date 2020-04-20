@@ -1,17 +1,27 @@
-﻿Index,Name,Stardate,Series,Episode,Klingons,Romulans,Vulcans,Tribbles,Mirror Universe,Kirk Lies to AI,Kirk,Spock,Sulu,Pike,Chapel,Uhura, Khan,Mudd,Notes
-1,The Corbomite,1512.2,TOS,S1E02,0,0,0,0,0,0,1,0,0,0,0,0,0,0,
-2,The Enemy Within,1672.1,TOS,S1E04,0,0,0,0,0,0,1,0,0,0,0,0,0,0,First of serval Duplications
-3,Balance of Terror,1709.1,TOS,S1E14,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
-4,The Return of the Archons,3156.2,TOS,S1E22,0,0,0,0,0,1,2,0,0,0,0,0,0,0,
-5,Errand of Mercy,3198.4,TOS,S1E27,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
-6,"I, Mudd",4513.3,TOS,S2E012,0,0,0,0,0,1,2,0,0,0,0,0,0,1,
-7,Friday's Child,3497.2,TOS,S2E03,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
-8,The Changeling,3541.9,TOS,S2E08,0,0,0,0,0,1,2,0,0,0,0,1,0,0,
-9,The Trouble with Tribbles,4523.3,TOS,S2E13,2,0,0,1,0,0,0,0,0,0,0,0,0,0,
-10,A Private Little War,4211.4,TOS,S2E16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
-11,The Ultimate Computer,4729.4,TOS,S2E24,0,0,0,0,0,1,2,0,0,0,0,0,0,0,
-12,Elaan of Troyius,4372.5,TOS,S3E02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
-13,The Enterprise Incident,5027.3,TOS,S3E04,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
-14,Day of the Dove,Armageddon,TOS,S3E11,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
-15,The Savage Curtain,5906.4,TOS,S3E22,2,0,0,0,0,0,0,0,0,0,0,0,0,0,
-16,Arena,3045.6,TOS,S1E19,0,0,0,0,0,0,1,0,0,0,0,0,0,0,Gorn also appear in ENT:In a Mirror Darkley
+﻿Index,Name,Stardate,Series,Episode,Klingons,Romulans,Vulcans,Tribbles,Mirror Universe,Project Genesis,Kirk Lies to AI,Kirk,McCoy,Spock,Scotty,Sulu,Pike,Chapel,Uhura, Khan,Mudd,Notes
+1,The Corbomite,1512.2,TOS,S1E02,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
+2,The Enemy Within,1672.1,TOS,S1E04,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,First of serval Duplications
+3,The Naked Time,1704.2,TOS,S1E06,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,Links to TNG naked Now
+4,Balance of Terror,1709.1,TOS,S1E14,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+5,Court Martial,2947.3,TOS,S1E14,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
+6,Arena,3045.6,TOS,S1E19,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,Gorn also appear in ENT:In a Mirror Darkley
+7,The Return of the Archons,3156.2,TOS,S1E22,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,
+8,Errand of Mercy,3198.4,TOS,S1E27,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+9,The City on the Edge of Forever,3134.6,TOS,S1E28,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,0,"Stardate from Draft teleplay, TAS YesterYear has gate, Time Travel"
+10,Friday's Child,3497.2,TOS,S2E03,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+11,The Changeling,3541.9,TOS,S2E08,0,0,0,0,0,0,1,2,0,0,0,0,0,0,1,0,0,
+12,"Mirror, Mirror",Unknown,TOS,S2E10,0,0,0,0,1,0,0,1,1,0,1,0,2,0,1,0,0,
+13,"I, Mudd",4513.3,TOS,S2E12,0,0,0,0,0,0,1,2,0,0,0,0,0,0,1,0,1,
+14,The Trouble with Tribbles,4523.3,TOS,S2E13,2,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+15,A Private Little War,4211.4,TOS,S2E16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+16,Obsession,3619.2,TOS,S2E18,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
+17,The Ultimate Computer,4729.4,TOS,S2E24,0,0,0,0,0,0,1,2,0,0,0,0,0,0,0,0,0,
+18,Elaan of Troyius,4372.5,TOS,S3E02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+19,The Paradise Syndrome,4824.6,TOS,S3E03,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,
+20,The Enterprise Incident,5027.3,TOS,S3E04,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+21,Day of the Dove,Armageddon,TOS,S3E11,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+22,Plato's Stepchildren,5784.2,TOS,S3E12,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,0,0,
+23,The Savage Curtain,5906.4,TOS,S3E22,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+24,The Search for Spock,8210.3,Star Trek,III,1,0,0,0,0,1,0,1,1,1,1,0,0,0,1,0,0,
+25,Wrath of Khan,8130.3,Star Trek,III,0,0,0,0,0,1,0,1,1,1,1,0,0,0,0,1,0,Links to the Augments
+26,The Final Frontier,8454.1,Star Trek,V,0,0,0,0,0,0,0,2,2,2,0,0,0,0,1,0,0,
