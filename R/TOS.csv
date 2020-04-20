@@ -1,10 +1,17 @@
-﻿Index,Name,Stardate,Series,Episode,Klingons,Romulans,Vulcans,Tribbles,Mirror Universe,AI,Kirk,Spock,Sulu,Pike,Chapel,Uhura, Khan,Mudd
-1,Errand of Mercy,3198.4,TOS,S1E27,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-2,Friday's Child,3497.2,TOS,S2E03,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-3,The Trouble with Tribbles,4523.3,TOS,S2E13,2,0,0,1,0,0,0,0,0,0,0,0,0,0
-4,A Private Little War,4211.4,TOS,S2E16,1,0,0,0,0,0,0,2,0,0,0,0,0,0
-5,Elaan of Troyius,4372.5,TOS,S3E02,1,0,0,0,0,0,1,0,0,0,0,0,0,0
-6,Day of the Dove,Armageddon,TOS,S3E11,1,0,0,0,0,0,0,0,0,0,0,0,0,0
-7,The Savage Curtain,5906.4,TOS,S3E22,2,0,0,0,0,0,0,1,0,0,0,0,0,0
-8,Balance of Terror,1709.1,TOS,S1E14,0,1,0,0,0,0,1,0,0,0,0,0,0,0
-9,The Enterprise Incident,5027.3,TOS,S3E04,0,1,0,0,0,0,0,1,0,0,0,0,0,0
+﻿Index,Name,Stardate,Series,Episode,Klingons,Romulans,Vulcans,Tribbles,Mirror Universe,Kirk Lies to AI,Kirk,Spock,Sulu,Pike,Chapel,Uhura, Khan,Mudd,Notes
+1,The Corbomite,1512.2,TOS,S1E02,0,0,0,0,0,0,1,0,0,0,0,0,0,0,
+2,The Enemy Within,1672.1,TOS,S1E04,0,0,0,0,0,0,1,0,0,0,0,0,0,0,First of serval Duplications
+3,Balance of Terror,1709.1,TOS,S1E14,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
+4,The Return of the Archons,3156.2,TOS,S1E22,0,0,0,0,0,1,2,0,0,0,0,0,0,0,
+5,Errand of Mercy,3198.4,TOS,S1E27,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+6,"I, Mudd",4513.3,TOS,S2E012,0,0,0,0,0,1,2,0,0,0,0,0,0,1,
+7,Friday's Child,3497.2,TOS,S2E03,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+8,The Changeling,3541.9,TOS,S2E08,0,0,0,0,0,1,2,0,0,0,0,1,0,0,
+9,The Trouble with Tribbles,4523.3,TOS,S2E13,2,0,0,1,0,0,0,0,0,0,0,0,0,0,
+10,A Private Little War,4211.4,TOS,S2E16,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+11,The Ultimate Computer,4729.4,TOS,S2E24,0,0,0,0,0,1,2,0,0,0,0,0,0,0,
+12,Elaan of Troyius,4372.5,TOS,S3E02,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+13,The Enterprise Incident,5027.3,TOS,S3E04,0,1,0,0,0,0,0,0,0,0,0,0,0,0,
+14,Day of the Dove,Armageddon,TOS,S3E11,1,0,0,0,0,0,0,0,0,0,0,0,0,0,
+15,The Savage Curtain,5906.4,TOS,S3E22,2,0,0,0,0,0,0,0,0,0,0,0,0,0,
+16,Arena,3045.6,TOS,S1E19,0,0,0,0,0,0,1,0,0,0,0,0,0,0,Gorn also appear in ENT:In a Mirror Darkley
