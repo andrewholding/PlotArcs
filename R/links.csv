@@ -1,4 +1,5 @@
-"index","var","Label"
-19,"Spock","Sarek"
-30,"Scotty","Sarek"
-31,"Spock","Sarek"
+Series,Episode,var,Label
+TOS,S2E15,Spock,Sarek
+Star Trek,z-II,Spock,Sarek
+Star Trek,z-III,Spock,Sarek
+Star Trek,z-IV,Spock,Sarek

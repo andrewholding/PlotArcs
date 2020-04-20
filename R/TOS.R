@@ -1,5 +1,6 @@
 #Settings
-Shift<-9/dev.size("cm")[1] #Will correct vertical bar positions, but only for the set size
+Shift<-9.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+                             #but only for the set window sizes, so needs adjustment
 tick_shift <- 0.45 #How far ticks are from the main line
 text_shift <- 0.25 #How far text is from the link
 
@@ -7,6 +8,13 @@ setwd("~/Desktop/PlotArcs/R")
 arcs<-read.csv("TOS.csv",stringsAsFactors = TRUE)
 looplink<-read.csv("links.csv",stringsAsFactors = TRUE)
 arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
+
+#Get indexes.
+EpisodeNames<-paste0(arcs$Series,arcs$Episode)
+EpisodeIndex<-arcs$Index
+names(EpisodeIndex)<-EpisodeNames
+looplink$index<-EpisodeIndex[paste0(looplink$Series,looplink$Episode)]
+looplink<-looplink[c("index","var","Label")]
 
 library(reshape2)
 arcs_long<-melt(arcs, id.vars=c("Index","Series","Episode","Name","Stardate"))
@@ -75,7 +83,8 @@ p<-p+ geom_path(data=arcs_long[ arcs_long$value >0,],
                 ),
                 
                 color="grey40",
-                size=0.8
+                linetype=3,
+                size=0.5
 )
 
 #Loop links
