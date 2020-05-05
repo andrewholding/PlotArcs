@@ -8,7 +8,9 @@ setwd("~/Desktop/PlotArcs/R")
 arcs<-read.csv("TOS.csv",stringsAsFactors = TRUE, check.names = FALSE)
 looplink<-read.csv("links.csv",stringsAsFactors = TRUE)
 arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
-#arcs<-arcs[-1,] #Hide Categories
+categories<-read.csv("categories.csv",stringsAsFactors = TRUE)
+rownames(categories)<-categories$Label
+
 
 #Get indexes.
 EpisodeNames<-paste0(arcs$Series,arcs$Episode)
@@ -22,12 +24,14 @@ arcs_long<-melt(arcs, id.vars=c("Index","Series","Episode","Name","Stardate"))
 
 arcs_long$Label<-paste0(arcs_long$Series," (",arcs_long$Episode,") ",arcs_long$Name)
 arcs_long$variable<-factor(gsub("[.]"," ",arcs_long$variable),levels=gsub("[.]"," ",names(arcs)[-1:-5]),ordered=TRUE)
+arcs_long$Category<-factor(categories[as.character(arcs_long$variable),"Category"],ordered=TRUE)
+
 
 #Set up colours
 library(RColorBrewer)
 mycolors<-colorRampPalette(brewer.pal(12, "Set3"))
-FillColors<-mycolors(length(levels(arcs_long$variable)))
-names(FillColors)<-as.character(levels(arcs_long$variable))
+FillColors<-mycolors(length(levels(arcs_long$Category)))
+names(FillColors)<-as.character(levels(arcs_long$Category))
 
 
 
@@ -153,14 +157,14 @@ p<-q
 p <- p +    
     geom_dotplot(data=arcs_long[arcs_long$value==1,],
                  binaxis="y",
-                 aes(fill=factor(variable), color=factor(variable)),
+                 aes(fill=factor(Category), color=factor(variable)),
                  color="black"
     ) 
 #Open circles
 p<-p +  
     geom_dotplot(data=arcs_long[arcs_long$value==2,],
                  binaxis="y",
-                 aes(color=factor(variable)),
+                 aes(color=factor(Category)),
                  fill="white"
     )
 
