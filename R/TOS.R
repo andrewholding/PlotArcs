@@ -164,7 +164,7 @@ p<-p +
     )
 
 #Tidy Axis
-p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.1)) + 
+p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.1, size=9.5)) + 
     xlab("") + 
     ylab("")  
 
@@ -175,3 +175,6 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.1)) 
 
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors)
 
+pdf("timeline.pdf", width=20, height=10)
+p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors)
+dev.off()
