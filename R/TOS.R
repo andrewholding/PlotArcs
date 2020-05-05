@@ -1,13 +1,14 @@
 #Settings
-Shift<-7/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-7.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
-tick_shift <- 0.45 #How far ticks are from the main line
+tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.25 #How far text is from the link
 
 setwd("~/Desktop/PlotArcs/R")
-arcs<-read.csv("TOS.csv",stringsAsFactors = TRUE)
+arcs<-read.csv("TOS.csv",stringsAsFactors = TRUE, check.names = FALSE)
 looplink<-read.csv("links.csv",stringsAsFactors = TRUE)
 arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
+#arcs<-arcs[-1,] #Hide Categories
 
 #Get indexes.
 EpisodeNames<-paste0(arcs$Series,arcs$Episode)
@@ -164,7 +165,7 @@ p<-p +
     )
 
 #Tidy Axis
-p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.1, size=9.5)) + 
+p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.5, size=9.5)) + 
     xlab("") + 
     ylab("")  
 
@@ -175,6 +176,6 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.1, s
 
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors)
 
-pdf("timeline.pdf", width=20, height=10)
+pdf("timeline.pdf", width=25, height=10)
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors)
 dev.off()
