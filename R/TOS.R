@@ -3,9 +3,10 @@ Shift<-16/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
 tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.25 #How far text is from the link
-customPalette <- "Pastel2" #Color Palette
-
+customPalette <- "Set2" #Color Palette
+chartDotsize <- 0.8
 setwd("~/Desktop/PlotArcs/R")
+
 arcs<-read.csv("TOS.csv",stringsAsFactors = TRUE, check.names = FALSE)
 looplink<-read.csv("links.csv",stringsAsFactors = TRUE)
 arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
@@ -160,14 +161,16 @@ p <- p +
     geom_dotplot(data=arcs_long[arcs_long$value==1,],
                  binaxis="y",
                  aes(fill=factor(Category), color=factor(variable)),
-                 color="black"
+                 color="black",
+                 dotsize=chartDotsize
     ) 
 #Open circles
 p<-p +  
     geom_dotplot(data=arcs_long[arcs_long$value==2,],
                  binaxis="y",
                  aes(color=factor(Category)),
-                 fill="white"
+                 fill="white",
+                 dotsize=chartDotsize
     )
 
 #Tidy Axis
@@ -182,6 +185,6 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.5, s
 
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 
-pdf("timeline.pdf", width=25, height=10)
+pdf("timeline.pdf", width=25, height=11)
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 dev.off()
