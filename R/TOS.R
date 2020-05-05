@@ -1,8 +1,9 @@
 #Settings
-Shift<-7.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-16/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
 tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.25 #How far text is from the link
+customPalette <- "Pastel2" #Color Palette
 
 setwd("~/Desktop/PlotArcs/R")
 arcs<-read.csv("TOS.csv",stringsAsFactors = TRUE, check.names = FALSE)
@@ -29,7 +30,7 @@ arcs_long$Category<-factor(categories[as.character(arcs_long$variable),"Category
 
 #Set up colours
 library(RColorBrewer)
-mycolors<-colorRampPalette(brewer.pal(12, "Set3"))
+mycolors<-colorRampPalette(brewer.pal(length(levels(arcs_long$Category)), customPalette))
 FillColors<-mycolors(length(levels(arcs_long$Category)))
 names(FillColors)<-as.character(levels(arcs_long$Category))
 
@@ -53,10 +54,11 @@ p<-ggplot(
     theme_pubr() +
     theme(    axis.line=element_blank(), 
               axis.ticks=element_blank(),
-              legend.position="none")
+              legend.position="right")
 #Background Bars (for some reason removing the geom_line breaks it)
 p <-p+  geom_line( 
     data = arcs_long, 
+    #position=position_dodge(width=-1),
     aes(
         x=factor(Label, levels=arcs_order, ordered = TRUE),
         y=factor(variable),
@@ -178,8 +180,8 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.5, s
 
 #Plotp 
 
-p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors)
+p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 
 pdf("timeline.pdf", width=25, height=10)
-p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors)
+p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 dev.off()
