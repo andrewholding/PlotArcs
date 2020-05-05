@@ -1,5 +1,5 @@
 #Settings
-Shift<-9.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-7/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
 tick_shift <- 0.45 #How far ticks are from the main line
 text_shift <- 0.25 #How far text is from the link
@@ -164,7 +164,7 @@ p<-p +
     )
 
 #Tidy Axis
-p <- p +  theme(axis.text.x = element_text(angle = 90, hjust = 1)) + 
+p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.1)) + 
     xlab("") + 
     ylab("")  
 
