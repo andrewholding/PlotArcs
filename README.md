@@ -8,12 +8,13 @@ As a result, I made this an overly detailed graph of how The Next Generation sto
 
 Link to the image https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TNG%20plot%20arcs.png
 
+*Update 2020-05-07*
+
+I have now written some R code to generate these from a csv file and made one for The Original Series. I don't know it as well, and it lacks the ensemble cast of TNG but it's a bit of fun still.
+
+
 Licensed under  Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
-
-I think my next steps would be:
-
-- Add in Seven of Nine's key episodes.
-- Consider how to include DS9 and Voyager character arcs.
 
 ![TNG Plot Arc](https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TNG%20plot%20arcs.png)
 
+![TOS Timeline](https://raw.githubusercontent.com/andrewholding/PlotArcs/master/TOS%20timeline.png)
