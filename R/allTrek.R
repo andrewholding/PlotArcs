@@ -186,6 +186,6 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.5, s
 
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 
-pdf("timeline.pdf", width=30, height=16,  useDingbats=FALSE)
+pdf("timeline.pdf", width=36, height=16,  useDingbats=FALSE)
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 dev.off()
