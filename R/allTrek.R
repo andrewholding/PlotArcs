@@ -1,6 +1,7 @@
 #Settings
-Shift<-20/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-15/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
+                            #bigger = more left.
 tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.40 #How far text is from the link
 customPalette <- "Set2" #Color Palette
@@ -13,6 +14,8 @@ arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
 categories<-read.csv("allCategories.csv",stringsAsFactors = TRUE)
 rownames(categories)<-categories$Label
 
+#index arcs
+arcs<-cbind(data.frame(Index=seq(1:nrow(arcs))),arcs)
 
 #Get indexes.
 EpisodeNames<-paste0(arcs$Series,arcs$Episode)
