@@ -1,10 +1,10 @@
 #Settings
-Shift<-18/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-20/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
 tick_shift <- 0.5 #How far ticks are from the main line
-text_shift <- 0.25 #How far text is from the link
+text_shift <- 0.40 #How far text is from the link
 customPalette <- "Set2" #Color Palette
-chartDotsize <- 0.5 #Set the size of the dots
+chartDotsize <- 0.4 #Set the size of the dots
 setwd("~/Desktop/PlotArcs/R")
 
 arcs<-read.csv("allTrek.csv",stringsAsFactors = TRUE, check.names = FALSE)
@@ -19,6 +19,7 @@ EpisodeNames<-paste0(arcs$Series,arcs$Episode)
 EpisodeIndex<-arcs$Index
 names(EpisodeIndex)<-EpisodeNames
 looplink$index<-EpisodeIndex[paste0(looplink$Series,looplink$Episode)]
+looplink_offsets<-looplink[c("Label","Offset")]
 looplink<-looplink[c("index","var","Label")]
 
 library(reshape2)
@@ -100,10 +101,15 @@ p<-p+ geom_path(data=arcs_long[ arcs_long$value >0,],
 q<-p
 for (LOI in as.character(unique(looplink$Label))) #LOI = label of interest
 {
-    q<- q+ geom_path(data=looplink[looplink$Label==LOI,],
+    tick_shift_offset<-tick_shift+max(looplink_offsets[looplink_offsets$Label==LOI,]$Offset)
+    
+    looplink_crossbar<-cbind(looplink[looplink$Label==LOI,],data.frame(Offset=rep(tick_shift_offset,nrow(looplink[looplink$Label==LOI,]))))
+    
+     q<- q+ geom_path(data=looplink_crossbar,
+
                      aes(
                          x=as.numeric(index)+Shift,
-                         y=max(which(levels(arcs_long$variable) %in% var))+tick_shift,
+                         y=max(which(levels(arcs_long$variable) %in% var))+Offset,
                          group=Label
                      ),
                      
@@ -119,7 +125,7 @@ for (LOI in as.character(unique(looplink$Label))) #LOI = label of interest
     data.frame(  index=looplink[looplink$Label==LOI,"index"],
                  var=rep(levels(arcs_long$variable)[max(which(levels(arcs_long$variable) %in% looplink[looplink$Label==LOI,"var"]))],length(looplink[looplink$Label==LOI,"var"])),
                  Label=looplink[looplink$Label==LOI,"Label"],
-                 Offset=rep(tick_shift,length(looplink[looplink$Label==LOI,"var"]))
+                 Offset=rep(tick_shift_offset,length(looplink[looplink$Label==LOI,"var"]))
     )
     )
     
@@ -136,10 +142,12 @@ for (LOI in as.character(unique(looplink$Label))) #LOI = label of interest
                     size=0.75
     )
     
+    
+    
     looplink_text<-data.frame(index=mean(looplink_ticks[looplink_ticks$Offset==0,"index"]),
                               var=looplink_ticks[looplink_ticks$Offset==0,"var"][1],
                               Label=looplink_ticks[looplink_ticks$Offset==0,"Label"][1],
-                              Offset=looplink_ticks[looplink_ticks$Offset==0,"Offset"][1],
+                              Offset=looplink_ticks[looplink_ticks$Offset==0,"Offset"][1]+max(looplink_offsets[looplink_offsets$Label==LOI,]$Offset),
                               var_index=max(looplink_ticks[looplink_ticks$Offset==0,"var_index"])
     )
     

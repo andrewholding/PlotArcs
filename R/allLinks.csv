@@ -1,19 +1,21 @@
-Series,Episode,var,Label
-DIS,S2E06,Pike,Rise of the Kelpiens
-DIS,S2E13/14,Pike,Rise of the Kelpiens
-ENT,S4E04,Augments,Soong
-ENT,S4E05,Augments,Soong
-ENT,S4E06,Augments,Soong
-ENT,S4E15,Klingons,Cranial Ridge
-ENT,S4E16,Klingons,Cranial Ridge
-DS9,S5E06,Klingons,Cranial Ridge
-ENT,S4E22,Riker,Pegasus
-TNG,S7E12,Riker,Pegasus
-TNG,S2E03,Data,Moriaty
-TNG,S6E12,Barclay,Moriaty
-TNG,S3E08,Ferengi,Arridor and Koi
-VOY,S3E05,Ferengi,Arridor and Koi
-TNG,S2E09,Data,Bruce Maddox
-TNG,S4E11,Data,Bruce Maddox
-TNG,S3E19,Picard,Vash
-TNG,S4E20,Picard,Vash
+Series,Episode,var,Label,Offset
+DIS,S2E06,Pike,Rise of the Kelpiens,0
+DIS,S2E13/14,Pike,Rise of the Kelpiens,0
+ENT,S4E04,Augments,Soong,0
+ENT,S4E05,Augments,Soong,0
+ENT,S4E06,Augments,Soong,0
+ENT,S4E15,Klingons,Cranial Ridge,0
+ENT,S4E16,Klingons,Cranial Ridge,0
+DS9,S5E06,Klingons,Cranial Ridge,0
+ENT,S4E22,Riker,Pegasus,0
+TNG,S7E12,Riker,Pegasus,0
+TNG,S2E03,Data,Moriaty,0
+TNG,S6E12,Barclay,Moriaty,0
+TNG,S3E08,Ferengi,Arridor and Koi,0
+VOY,S3E05,Ferengi,Arridor and Koi,0
+TNG,S2E09,Data,Bruce Maddox,0
+TNG,S4E11,Data,Bruce Maddox,0
+TNG,S3E19,Picard,Vash,-1.5
+TNG,S4E20,Picard,Vash,-1.5
+TNG,S6E24,Riker,Thomas Riker,-2
+DS9,S3E09,Riker,Thomas Riker,-2
