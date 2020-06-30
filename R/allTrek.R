@@ -11,7 +11,7 @@ highlightColor<-"#FFFFB0"
 setwd("~/Desktop/PlotArcs/R")
 
 arcs<-read.csv("allTrek.csv",stringsAsFactors = TRUE, check.names = FALSE)
-arcs[nrow(arcs)+1, ]<-c(rep(NA,4),rep(0,ncol(arcs)-4), " ")
+arcs[nrow(arcs)+1, ]<-c(rep(NA,4),rep(0,ncol(arcs)-4), " ") #Adds another column to make graph render better.
 looplink<-read.csv("allLinks.csv",stringsAsFactors = TRUE)
 highlights<-read.csv("highlights.csv",stringsAsFactors = TRUE)
 arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
@@ -37,6 +37,10 @@ arcs_long$Label<-paste0(arcs_long$Series," (",arcs_long$Episode,") ",arcs_long$N
 arcs_long$variable<-factor(gsub("[.]"," ",arcs_long$variable),levels=gsub("[.]"," ",names(arcs)[-1:-5]),ordered=TRUE)
 arcs_long$Category<-factor(categories[as.character(arcs_long$variable),"Category"],ordered=TRUE)
 
+
+#Remove label from final column
+levels(arcs_long$Label)<-c(levels(arcs_long$Label)," ")
+arcs_long[arcs_long$Label == "NA (NA) NA","Label"] <-" "
 
 #Set up colours
 library(RColorBrewer)
@@ -99,6 +103,34 @@ p<-p + geom_path(data=as.data.frame(highlight),
                  ),
                  
                  color=highlightColor,
+                 size=highlightWidth
+)
+
+###Movies
+
+highlightEpisodesIndex<-arcs[arcs$Series == "Star Trek", "Index"]
+
+#Remove trailing NA (which is there to make the last row look nice"
+highlightEpisodesIndex<-highlightEpisodesIndex[1:length(highlightEpisodesIndex)-1]
+
+
+highlight<-data.frame(index=rep(highlightEpisodesIndex,2))
+
+highlight$var<-c(
+    rep(levels(arcs_long$variable)[1],nrow(highlight)/2),
+    rep(levels(arcs_long$variable)[length(levels(arcs_long$variable))],nrow(highlight)/2)
+)
+highlight$Offset<-c(rep(-1.5,nrow(highlight)/2),rep(+1,nrow(highlight)/2))
+
+
+p<-p + geom_path(data=as.data.frame(highlight),
+                 aes(
+                     x=index+Shift,
+                     y=match(var, levels(arcs_long$variable))+Offset,
+                     group=index
+                 ),
+                 
+                 color="grey95",
                  size=highlightWidth
 )
 
