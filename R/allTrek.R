@@ -5,13 +5,14 @@ Shift<-19/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
 tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.40 #How far text is from the link
 customPalette <- "Set3" #Color Palette
-chartDotsize <- 0.4 #Set the size of the dots
-highlightWidth<-3 #Width of Highlight
+chartDotsize <- 0.35 #Set the size of the dots
+highlightWidth<-5 #Width of Highlight
 highlightColor<-"#FFFFB0"
 setwd("~/Desktop/PlotArcs/R")
 
 arcs<-read.csv("allTrek.csv",stringsAsFactors = TRUE, check.names = FALSE)
 looplink<-read.csv("allLinks.csv",stringsAsFactors = TRUE)
+highlights<-read.csv("highlights.csv",stringsAsFactors = TRUE)
 arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
 categories<-read.csv("allCategories.csv",stringsAsFactors = TRUE)
 rownames(categories)<-categories$Label
@@ -26,6 +27,7 @@ names(EpisodeIndex)<-EpisodeNames
 looplink$index<-EpisodeIndex[paste0(looplink$Series,looplink$Episode)]
 looplink_offsets<-looplink[c("Label","Offset")]
 looplink<-looplink[c("index","var","Label")]
+highlights$index<-EpisodeIndex[paste0(highlights$Series,highlights$Episode)]
 
 library(reshape2)
 arcs_long<-melt(arcs, id.vars=c("Index","Series","Episode","Name","Stardate"))
@@ -77,9 +79,9 @@ p <-p+  geom_line(
 
 ###Highlights
 
-highlightEpisodes<-c(167,100)
+highlightEpisodesIndex<-highlights$index
 
-highlight<-data.frame(index=rep(highlightEpisodes,2))
+highlight<-data.frame(index=rep(highlightEpisodesIndex,2))
 
 highlight$var<-c(
     rep(levels(arcs_long$variable)[1],nrow(highlight)/2),
