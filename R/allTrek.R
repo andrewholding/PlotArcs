@@ -1,11 +1,13 @@
 #Settings
-Shift<-15/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-19/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
-                            #bigger = more left.
+        
 tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.40 #How far text is from the link
-customPalette <- "Set2" #Color Palette
+customPalette <- "Set3" #Color Palette
 chartDotsize <- 0.4 #Set the size of the dots
+highlightWidth<-3 #Width of Highlight
+highlightColor<-"#FFFFB0"
 setwd("~/Desktop/PlotArcs/R")
 
 arcs<-read.csv("allTrek.csv",stringsAsFactors = TRUE, check.names = FALSE)
@@ -72,6 +74,33 @@ p <-p+  geom_line(
     color="grey70",
     size=0.1
 )
+
+###Highlights
+
+highlightEpisodes<-c(167,100)
+
+highlight<-data.frame(index=rep(highlightEpisodes,2))
+
+highlight$var<-c(
+    rep(levels(arcs_long$variable)[1],nrow(highlight)/2),
+    rep(levels(arcs_long$variable)[length(levels(arcs_long$variable))],nrow(highlight)/2)
+)
+highlight$Offset<-c(rep(-1.5,nrow(highlight)/2),rep(+1,nrow(highlight)/2))
+
+
+p<-p + geom_path(data=as.data.frame(highlight),
+                 aes(
+                     x=index+Shift,
+                     y=match(var, levels(arcs_long$variable))+Offset,
+                     group=index
+                 ),
+                 
+                 color=highlightColor,
+                 size=highlightWidth
+)
+
+
+#Background bars 2
 
 p<-p+ geom_path( 
     data=arcs_long[ arcs_long$value >0,], 
@@ -197,6 +226,8 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.5, s
 
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 
-pdf("timeline.pdf", width=36, height=16,  useDingbats=FALSE)
+pdf("timeline.pdf", width=43, height=18,  useDingbats=FALSE)
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 dev.off()
+
+
