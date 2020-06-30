@@ -1,5 +1,5 @@
 #Settings
-Shift<-19/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-18.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
         
 tick_shift <- 0.5 #How far ticks are from the main line
@@ -11,6 +11,7 @@ highlightColor<-"#FFFFB0"
 setwd("~/Desktop/PlotArcs/R")
 
 arcs<-read.csv("allTrek.csv",stringsAsFactors = TRUE, check.names = FALSE)
+arcs[nrow(arcs)+1, ]<-c(rep(NA,4),rep(0,ncol(arcs)-4), " ")
 looplink<-read.csv("allLinks.csv",stringsAsFactors = TRUE)
 highlights<-read.csv("highlights.csv",stringsAsFactors = TRUE)
 arcs<-arcs[,1:(length(colnames(arcs))-1)] #Hide Notes
@@ -232,4 +233,6 @@ pdf("timeline.pdf", width=43, height=18,  useDingbats=FALSE)
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 dev.off()
 
-
+trekMatrix<-data.matrix(arcs[,-1:-5])
+rownames(trekMatrix)<-paste(arcs[,4],arcs[,5],arcs[,2])
+heatmap(trekMatrix)
