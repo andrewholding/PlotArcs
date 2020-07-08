@@ -1,11 +1,11 @@
 #Settings
-Shift<-18.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-16.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
         
 tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.40 #How far text is from the link
 customPalette <- "Set3" #Color Palette
-chartDotsize <- 0.35 #Set the size of the dots
+chartDotsize <- 0.325 #Set the size of the dots
 highlightWidth<-5 #Width of Highlight
 highlightColor<-"#FFFFB0"
 setwd("~/Desktop/PlotArcs/R")
