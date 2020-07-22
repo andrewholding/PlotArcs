@@ -5,9 +5,9 @@ Shift<-16.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
 tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.40 #How far text is from the link
 customPalette <- "Set3" #Color Palette
-chartDotsize <- 0.325 #Set the size of the dots
+chartDotsize <- 0.20 #Set the size of the dots
 highlightWidth<-5 #Width of Highlight
-highlightColor<-"#FFFFB0"
+highlightColor<-"#FFFF0070"
 setwd("~/Desktop/PlotArcs/R")
 
 arcs<-read.csv("allTrek.csv",stringsAsFactors = TRUE, check.names = FALSE)
@@ -130,7 +130,7 @@ p<-p + geom_path(data=as.data.frame(highlight),
                      group=index
                  ),
                  
-                 color="grey95",
+                 color="#d0d0d0a0",
                  size=highlightWidth
 )
 
@@ -261,7 +261,7 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.5, s
 
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 
-pdf("timeline.pdf", width=43, height=18,  useDingbats=FALSE)
+pdf("timeline.pdf", width=50, height=25,  useDingbats=FALSE)
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 dev.off()
 
