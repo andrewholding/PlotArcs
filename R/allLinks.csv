@@ -1,1 +1,76 @@
-Series,Episode,var,Label,OffsetDIS,S2E06,Pike,Rise of the Kelpiens,0DIS,S2E13/14,Pike,Rise of the Kelpiens,0ENT,S4E04,Augments,Soong,0ENT,S4E05,Augments,Soong,0ENT,S4E06,Augments,Soong,0ENT,S4E15,Klingons,Cranial Ridge,-1.5ENT,S4E16,Klingons,Cranial Ridge,-1.5DS9,S5E06,Klingons,Cranial Ridge,-1.5ENT,S4E22,Riker,Pegasus,0TNG,S7E12,Riker,Pegasus,0TNG,S2E03,Data,Moriaty,0TNG,S6E12,Barclay,Moriaty,0TNG,S3E08,Ferengi,Arridor and Koi,1VOY,S3E05,Ferengi,Arridor and Koi,1TNG,S2E09,Data,Bruce Maddox,2TNG,S4E11,Data,Bruce Maddox,2PIC,S1E05,Data,Bruce Maddox,2TNG,S3E19,Picard,Vash,-1.5TNG,S4E20,Picard,Vash,-1.5DS9,S1E07,Q,Vash,-1.5TNG,S6E24,Riker,Thomas Riker,-4.5DS9,S3E09,Riker,Thomas Riker,-4.5TNG,S1E09,Picard,Bok,-2.5TNG,S7E22,Picard,Bok,-2.5TNG,S1E01/02,Q,Trial of Humanity,-2.5TNG,S7E25/26,Q,Trial of Humanity,-2.5DS9,S4E22,Eddington,Sisko vs Eddington,-6DS9,S5E13,Eddington,Sisko vs Eddington,-6DS9,S5E23,Eddington,Sisko vs Eddington,-6VOY,S6E10,Barclay,Pathfinder,0VOY,S6E24,Barclay,Pathfinder,0VOY,S7E06,Barclay,Pathfinder,0VOY,S7E20,Barclay,Pathfinder,0VOY,S2E18,Q,Q Continuum Civil War,0VOY,S3E11,Q,Q Continuum Civil War,0VOY,S7E19,Q,Q Continuum Civil War,0VOY,S2E18,Riker,Thaddeus (Name Only),2PIC,S1E07,Riker,Thaddeus (Name Only),2TNG,S5E23,The Borg,Hugh,-2TNG,S6E26/S7E01,The Borg,Hugh,-2PIC,S1E06,The Borg,Hugh,-2PIC,S1E08,The Borg,Hugh,-2VOY,S1E10,Prime Directive,Space Folding,0PIC,S1E06,The Borg,Space Folding,0DS9,S4E11,Changeling Infiltration,Starfleet Coup,-3.5DS9,S4E12,Changeling Infiltration,Starfleet Coup,-3.5DS9,S3E22,Sisko,Bajoran Light Ship,-1.5DS9,S4E17,Sisko,Bajoran Light Ship,-1.5DS9,S5E19,Kira,Tekeny Ghemor,-5.5DS9,S3E05,Kira,Tekeny Ghemor,-5.5DS9,S4E14,Dukat,Stolen Bird-of-Prey,0.1DS9,S5E01,Dukat,Stolen Bird-of-Prey,0.1DS9,S5E15,Dukat,Stolen Bird-of-Prey,0.1DS9,S5E03,Quark,Grilka,-4.25DS9,S3E03,Quark,Grilka,-4.25DS9,S3E23,Quark,Ishka,1.9DS9,S5E20,Quark,Ishka,1.9DS9,S6E10,Quark,Ishka,1.9DS9,S6E23,Quark,Ishka,1.9DS9,S7E24,Quark,Ishka,1.9DS9,S3E04,Dax,Joran,-1.25DS9,S3E25,Dax,Joran,-1.25DS9,S7E13,Dax,Joran,-1.25DS9,S3E13,Bareil,Alternative Version,-0.1DS9,S6E08,Mirror Universe,Alternative Version,-0.1
+Series,Episode,var,Label,Offset
+DIS,S2E06,Pike,Rise of the Kelpiens,0
+DIS,S2E13/14,Pike,Rise of the Kelpiens,0
+ENT,S4E04,Augments,Soong,0
+ENT,S4E05,Augments,Soong,0
+ENT,S4E06,Augments,Soong,0
+ENT,S4E15,Klingons,Cranial Ridge,-1.5
+ENT,S4E16,Klingons,Cranial Ridge,-1.5
+DS9,S5E06,Klingons,Cranial Ridge,-1.5
+ENT,S4E22,Riker,Pegasus,0
+TNG,S7E12,Riker,Pegasus,0
+TNG,S2E03,Data,Moriaty,0
+TNG,S6E12,Barclay,Moriaty,0
+TNG,S3E08,Ferengi,Arridor and Koi,1
+VOY,S3E05,Ferengi,Arridor and Koi,1
+TNG,S2E09,Data,Bruce Maddox,2
+TNG,S4E11,Data,Bruce Maddox,2
+PIC,S1E05,Data,Bruce Maddox,2
+TNG,S3E19,Picard,Vash,-1.5
+TNG,S4E20,Picard,Vash,-1.5
+DS9,S1E07,Q,Vash,-1.5
+TNG,S6E24,Riker,Thomas Riker,-4.5
+DS9,S3E09,Riker,Thomas Riker,-4.5
+TNG,S1E09,Picard,Bok,-2.5
+TNG,S7E22,Picard,Bok,-2.5
+TNG,S1E01/02,Q,Trial of Humanity,-2.5
+TNG,S7E25/26,Q,Trial of Humanity,-2.5
+DS9,S4E22,Eddington,Sisko vs Eddington,-6
+DS9,S5E13,Eddington,Sisko vs Eddington,-6
+DS9,S5E23,Eddington,Sisko vs Eddington,-6
+VOY,S6E10,Barclay,Pathfinder,0
+VOY,S6E24,Barclay,Pathfinder,0
+VOY,S7E06,Barclay,Pathfinder,0
+VOY,S7E20,Barclay,Pathfinder,0
+VOY,S2E18,Q,Q Continuum Civil War,0
+VOY,S3E11,Q,Q Continuum Civil War,0
+VOY,S7E19,Q,Q Continuum Civil War,0
+VOY,S2E18,Riker,Thaddeus (Name Only),2
+PIC,S1E07,Riker,Thaddeus (Name Only),2
+TNG,S5E23,The Borg,Hugh,-2
+TNG,S6E26/S7E01,The Borg,Hugh,-2
+PIC,S1E06,The Borg,Hugh,-2
+PIC,S1E08,The Borg,Hugh,-2
+VOY,S1E10,Prime Directive,Space Folding,0
+PIC,S1E06,The Borg,Space Folding,0
+DS9,S4E11,Changeling Infiltration,Starfleet Coup,-3.5
+DS9,S4E12,Changeling Infiltration,Starfleet Coup,-3.5
+DS9,S3E22,Sisko,Bajoran Light Ship,-1.5
+DS9,S4E17,Sisko,Bajoran Light Ship,-1.5
+DS9,S5E19,Kira,Tekeny Ghemor,-5.5
+DS9,S3E05,Kira,Tekeny Ghemor,-5.5
+DS9,S4E14,Dukat,Stolen Bird-of-Prey,0.1
+DS9,S5E01,Dukat,Stolen Bird-of-Prey,0.1
+DS9,S5E15,Dukat,Stolen Bird-of-Prey,0.1
+DS9,S5E03,Quark,Grilka,-4.25
+DS9,S3E03,Quark,Grilka,-4.25
+DS9,S3E23,Quark,Ishka,1.9
+DS9,S5E20,Quark,Ishka,1.9
+DS9,S6E10,Quark,Ishka,1.9
+DS9,S6E23,Quark,Ishka,1.9
+DS9,S7E24,Quark,Ishka,1.9
+DS9,S3E04,Dax,Joran,-1.25
+DS9,S3E25,Dax,Joran,-1.25
+DS9,S7E13,Dax,Joran,-1.25
+DS9,S3E13,Bareil,Alternative Version,-0.1
+DS9,S6E08,Mirror Universe,Alternative Version,-0.1
+DS9,S6E13,Sisko,Benny  Russell,-1.5
+DS9,S7E01/02,Sisko,Benny  Russell,-1.5
+VOY,S2E16,Tuvok,Suder's Pennance,0
+VOY,S2E26/S3E01,Seska,Suder's Pennance,0
+VOY,S3E21,Time Travel,Year of Hell,0
+VOY,S4E08/09,Time Travel,Year of Hell,0
+VOY,S3E08,Time Travel,Captain Braxton,0
+VOY,S5E24,Time Travel,Captain Braxton,0
+VOY,S6E11,Janeway,Fairhaven,-4
+VOY,S6E17,Janeway,Fairhaven,-4

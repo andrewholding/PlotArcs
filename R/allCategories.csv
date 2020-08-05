@@ -1,1 +1,83 @@
-Label,CategoryThe Borg,FactionKlingons,FactionRomulans,FactionCardassians,FactionBajorans,FactionFerengi,FactionVulcans,FactionTribbles,FactionTalosians,FactionAugments,FactionDominion,FactionSection 31,FactionSarek,CharacterCochrane,CharacterKhan,CharacterMudd,CharacterKor,CharacterKang,CharacterQ,CharacterLore,CharacterThe Traveller,CharacterKurn,CharacterEddington,CharacterMarquis,Plot ArcBareil,CharacterWinn,CharacterMirror Universe,Plot ArcProject Genesis,Plot ArcTime Travel,TropePolywater,Plot ArcShore Leave Planet,Plot ArcParasite Infiltrate,Plot ArcPrime Directive,TropeRed Shirt Dies,TropeKirk Lies to an AI,TropeKirk,TOS CrewMcCoy,TOS CrewSpock,TOS CrewScotty,TOS CrewSulu,TOS CrewPike,TOS CrewUhura,TOS CrewRiker,TNG CrewWorf,TNG CrewAlexander,CharacterTasha Yar,TNG CrewSela,CharacterData,TNG CrewPicard,TNG CrewGuinan,TNG CrewBarclay,TNG CrewChangeling Infiltration,Plot ArcKlingon War,Plot ArcDominion Invasion,Plot ArcThe Final Chapter,Plot ArcSisko,DS9 CrewJake,CharacterO'Brien,DS9 CrewBashir,DS9 CrewDax,DS9 CrewKira,DS9 CrewQuark,DS9 CrewOdo,DS9 CrewGarek,CharacterDukat,CharacterJaneway,VOY CrewSeven,VOY CrewUSS Defiant (NCC-1764),ShipUSS Enterprise (NCC-1701),ShipUSS Enterprise (NCC-1701-A),ShipUSS Enterprise (NCC-1701-D),ShipUSS Enterprise (NCC-1701-E),ShipUSS Excelsior (NCC-2000),ShipUSS Defiant (NX-74205),ShipUSS Voyager (NCC-74656),Ship
+Label,Category
+The Borg,Faction
+Klingons,Faction
+Romulans,Faction
+Cardassians,Faction
+Bajorans,Faction
+Ferengi,Faction
+Vulcans,Faction
+Tribbles,Faction
+Talosians,Faction
+Augments,Faction
+Dominion,Faction
+Section 31,Faction
+Sarek,Character
+Cochrane,Character
+Khan,Character
+Mudd,Character
+Kor,Character
+Kang,Character
+Q,Character
+Lore,Character
+The Traveller,Character
+Kurn,Character
+Eddington,Character
+Marquis,Plot Arc
+Bareil,Character
+Winn,Character
+Species 8472,Faction
+Mirror Universe,Plot Arc
+Project Genesis,Plot Arc
+Time Travel,Trope
+Polywater,Plot Arc
+Shore Leave Planet,Plot Arc
+Parasite Infiltrate,Plot Arc
+Prime Directive,Trope
+Red Shirt Dies,Trope
+Kirk Lies to an AI,Trope
+Kirk,TOS Crew
+McCoy,TOS Crew
+Spock,TOS Crew
+Scotty,TOS Crew
+Sulu,TOS Crew
+Pike,TOS Crew
+Uhura,TOS Crew
+Riker,TNG Crew
+Worf,TNG Crew
+Alexander,Character
+Tasha Yar,TNG Crew
+Sela,Character
+Data,TNG Crew
+Picard,TNG Crew
+Guinan,TNG Crew
+Barclay,TNG Crew
+Changeling Infiltration,Plot Arc
+Klingon War,Plot Arc
+Dominion Invasion,Plot Arc
+The Final Chapter,Plot Arc
+Sisko,DS9 Crew
+Jake,Character
+O'Brien,DS9 Crew
+Bashir,DS9 Crew
+Dax,DS9 Crew
+Kira,DS9 Crew
+Quark,DS9 Crew
+Odo,DS9 Crew
+Garek,Character
+Dukat,Character
+Janeway,VOY Crew
+Seven,VOY Crew
+USS Defiant (NCC-1764),Ship
+USS Enterprise (NCC-1701),Ship
+USS Enterprise (NCC-1701-A),Ship
+USS Enterprise (NCC-1701-D),Ship
+USS Enterprise (NCC-1701-E),Ship
+USS Excelsior (NCC-2000),Ship
+USS Defiant (NX-74205),Ship
+USS Voyager (NCC-74656),Ship
+Torres,VOY Crew
+Doctor,VOY Crew
+Tuvok,VOY Crew
+Seska,Character
+Silverblood,Faction
+The Hirogen's Hunt,Plot Arc
