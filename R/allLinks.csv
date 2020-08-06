@@ -49,9 +49,9 @@ DS9,S3E22,Sisko,Bajoran Light Ship,-1.5
 DS9,S4E17,Sisko,Bajoran Light Ship,-1.5
 DS9,S5E19,Kira,Tekeny Ghemor,-5.5
 DS9,S3E05,Kira,Tekeny Ghemor,-5.5
-DS9,S4E14,Dukat,Stolen Bird-of-Prey,0.1
-DS9,S5E01,Dukat,Stolen Bird-of-Prey,0.1
-DS9,S5E15,Dukat,Stolen Bird-of-Prey,0.1
+DS9,S4E14,Dukat,Stolen Bird-of-Prey,2
+DS9,S5E01,Dukat,Stolen Bird-of-Prey,2
+DS9,S5E15,Dukat,Stolen Bird-of-Prey,2
 DS9,S5E03,Quark,Grilka,-4.25
 DS9,S3E03,Quark,Grilka,-4.25
 DS9,S3E23,Quark,Ishka,1.9
@@ -62,15 +62,15 @@ DS9,S7E24,Quark,Ishka,1.9
 DS9,S3E04,Dax,Joran,-1.25
 DS9,S3E25,Dax,Joran,-1.25
 DS9,S7E13,Dax,Joran,-1.25
-DS9,S3E13,Bareil,Alternative Version,-0.1
-DS9,S6E08,Mirror Universe,Alternative Version,-0.1
+DS9,S3E13,Bareil,Alternative Version,-0.15
+DS9,S6E08,Mirror Universe,Alternative Version,-0.15
 DS9,S6E13,Sisko,Benny  Russell,-1.5
 DS9,S7E01/02,Sisko,Benny  Russell,-1.5
 VOY,S2E16,Tuvok,Suder's Pennance,0
 VOY,S2E26/S3E01,Seska,Suder's Pennance,0
-VOY,S3E21,Time Travel,Year of Hell,0
-VOY,S4E08/09,Time Travel,Year of Hell,0
+VOY,S3E21,Time Travel,Year of Hell,1
+VOY,S4E08/09,Time Travel,Year of Hell,1
 VOY,S3E08,Time Travel,Captain Braxton,0
 VOY,S5E24,Time Travel,Captain Braxton,0
-VOY,S6E11,Janeway,Fairhaven,-4
-VOY,S6E17,Janeway,Fairhaven,-4
+VOY,S6E11,Janeway,Fairhaven,-2.5
+VOY,S6E17,Janeway,Fairhaven,-2.5
