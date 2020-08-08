@@ -16,25 +16,25 @@ VOY,S3E05,Ferengi,Arridor and Koi,1
 TNG,S2E09,Data,Bruce Maddox,2
 TNG,S4E11,Data,Bruce Maddox,2
 PIC,S1E05,Data,Bruce Maddox,2
-TNG,S3E19,Picard,Vash,-1.5
-TNG,S4E20,Picard,Vash,-1.5
-DS9,S1E07,Q,Vash,-1.5
+TNG,S3E19,Picard,Vash,-3.5
+TNG,S4E20,Picard,Vash,-3.5
+DS9,S1E07,Q,Vash,-3.5
 TNG,S6E24,Riker,Thomas Riker,-4.5
 DS9,S3E09,Riker,Thomas Riker,-4.5
 TNG,S1E09,Picard,Bok,-2.5
 TNG,S7E22,Picard,Bok,-2.5
 TNG,S1E01/02,Q,Trial of Humanity,-2.5
 TNG,S7E25/26,Q,Trial of Humanity,-2.5
-DS9,S4E22,Eddington,Sisko vs Eddington,-6
-DS9,S5E13,Eddington,Sisko vs Eddington,-6
-DS9,S5E23,Eddington,Sisko vs Eddington,-6
+DS9,S4E22,Eddington,Sisko vs Eddington,-7.5
+DS9,S5E13,Eddington,Sisko vs Eddington,-7.5
+DS9,S5E23,Eddington,Sisko vs Eddington,-7.5
 VOY,S6E10,Barclay,Pathfinder,0
 VOY,S6E24,Barclay,Pathfinder,0
 VOY,S7E06,Barclay,Pathfinder,0
 VOY,S7E20,Barclay,Pathfinder,0
-VOY,S2E18,Q,Q Continuum Civil War,0
-VOY,S3E11,Q,Q Continuum Civil War,0
-VOY,S7E19,Q,Q Continuum Civil War,0
+VOY,S2E18,Q,Q Continuum Civil War,-2.5
+VOY,S3E11,Q,Q Continuum Civil War,-2.5
+VOY,S7E19,Q,Q Continuum Civil War,-2.5
 VOY,S2E18,Riker,Thaddeus (Name Only),2
 PIC,S1E07,Riker,Thaddeus (Name Only),2
 TNG,S5E23,The Borg,Hugh,-2
@@ -74,3 +74,6 @@ VOY,S3E08,Time Travel,Captain Braxton,0
 VOY,S5E24,Time Travel,Captain Braxton,0
 VOY,S6E11,Janeway,Fairhaven,-2.5
 VOY,S6E17,Janeway,Fairhaven,-2.5
+ENT,S4E07,Vulcans,The Syrrannites,-1.5
+ENT,S4E08,Vulcans,The Syrrannites,-1.5
+ENT,S4E09,Vulcans,The Syrrannites,-1.5

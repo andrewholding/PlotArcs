@@ -1,5 +1,5 @@
 #Settings
-Shift<-16.5/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-10/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
         
 tick_shift <- 0.5 #How far ticks are from the main line
