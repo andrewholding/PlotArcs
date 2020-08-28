@@ -1,5 +1,5 @@
 #Settings
-Shift<-10/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-12/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
         
 tick_shift <- 0.5 #How far ticks are from the main line
@@ -261,7 +261,7 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.5, s
 
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 
-pdf("timeline.pdf", width=50, height=25,  useDingbats=FALSE)
+pdf("timeline.pdf", width=55, height=25,  useDingbats=FALSE)
 p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
 dev.off()
 
