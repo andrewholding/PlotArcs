@@ -1,13 +1,15 @@
 #Settings
-Shift<-15/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
+Shift<-10/dev.size("cm")[1] #Will correct vertical bar horizonatal positions,
                              #but only for the set window sizes, so needs adjustment
         
 tick_shift <- 0.5 #How far ticks are from the main line
 text_shift <- 0.40 #How far text is from the link
 customPalette <- "Set3" #Color Palette
-chartDotsize <- 0.175 #Set the size of the dots
-highlightWidth<-5 #Width of Highlight
+chartDotsize <- 0.16 #Set the size of the dots
+highlightWidth<-3.5 #Width of Highlight
 highlightColor<-"#FFFF0070"
+stripeWidth<-4 #Width of Highlight
+stripeColor<-"#DDEEFF70"
 setwd("~/Desktop/PlotArcs/R")
 
 arcs<-read.csv("allTrek.csv",stringsAsFactors = TRUE, check.names = FALSE)
@@ -81,6 +83,31 @@ p <-p+  geom_line(
     color="grey70",
     size=0.1
 )
+
+###Verical Stripes
+
+VerticalStripesIndex<-arcs$Index[(arcs$Index %% 2 == 1)]
+
+VerticalStripes<-data.frame(index=rep(VerticalStripesIndex,2))
+
+VerticalStripes$var<-c(
+    rep(levels(arcs_long$variable)[1],nrow(VerticalStripes)/2),
+    rep(levels(arcs_long$variable)[length(levels(arcs_long$variable))],nrow(VerticalStripes)/2)
+)
+VerticalStripes$Offset<-c(rep(-1.5,nrow(VerticalStripes)/2),rep(+1,nrow(VerticalStripes)/2))
+
+
+p<-p + geom_path(data=as.data.frame(VerticalStripes),
+                 aes(
+                     x=index+Shift,
+                     y=match(var, levels(arcs_long$variable))+Offset,
+                     group=index
+                 ),
+                 
+                 color=stripeColor,
+                 size=stripeWidth
+)
+
 
 ###Highlights
 
