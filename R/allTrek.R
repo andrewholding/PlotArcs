@@ -39,9 +39,10 @@ arcs_long$Label<-paste0(arcs_long$Series," (",arcs_long$Episode,") ",arcs_long$N
 arcs_long$variable<-factor(gsub("[.]"," ",arcs_long$variable),levels=gsub("[.]"," ",names(arcs)[-1:-5]),ordered=TRUE)
 arcs_long$Category<-factor(categories[as.character(arcs_long$variable),"Category"],ordered=TRUE)
 
+arcs_order <- paste0(arcs$Series," (",arcs$Episode,") ",arcs$Name)
 
 #Remove label from final column
-levels(arcs_long$Label)<-c(levels(arcs_long$Label)," ")
+arcs_order[arcs_order == "NA (NA) NA"] <- " "
 arcs_long[arcs_long$Label == "NA (NA) NA","Label"] <-" "
 
 #Set up colours
@@ -51,8 +52,6 @@ FillColors<-mycolors(length(levels(arcs_long$Category)))
 names(FillColors)<-as.character(levels(arcs_long$Category))
 
 
-
-arcs_order <- paste0(arcs$Series," (",arcs$Episode,") ",arcs$Name)
 
 #Note - loops are linked the index, arcs[order(arcs$Episode),"Index"], if you 
 #Reorder episodes, then you will have to correct the links.
@@ -277,7 +276,7 @@ p<-p +
     )
 
 #Tidy Axis
-p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=-0.5, size=9.5)) + 
+p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=0, size=9.5)) + 
     xlab("") + 
     ylab("")  
 
