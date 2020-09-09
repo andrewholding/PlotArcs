@@ -29,7 +29,7 @@ EpisodeNames<-paste0(arcs$Series,arcs$Episode)
 EpisodeIndex<-arcs$Index
 names(EpisodeIndex)<-EpisodeNames
 looplink$index<-EpisodeIndex[paste0(looplink$Series,looplink$Episode)]
-looplink_offsets<-looplink[c("Label","Offset")]
+looplink_offsets<-looplink[c("Label","Offset", "xLabel", "yLabel")]
 looplink<-looplink[c("index","var","Label")]
 highlights$index<-EpisodeIndex[paste0(highlights$Series,highlights$Episode)]
 
@@ -244,14 +244,16 @@ for (LOI in as.character(unique(looplink$Label))) #LOI = label of interest
                               var=looplink_ticks[looplink_ticks$Offset==0,"var"][1],
                               Label=looplink_ticks[looplink_ticks$Offset==0,"Label"][1],
                               Offset=looplink_ticks[looplink_ticks$Offset==0,"Offset"][1]+max(looplink_offsets[looplink_offsets$Label==LOI,]$Offset),
-                              var_index=max(looplink_ticks[looplink_ticks$Offset==0,"var_index"])
+                              var_index=max(looplink_ticks[looplink_ticks$Offset==0,"var_index"]),
+                              xLabel=looplink_offsets[looplink_offsets$Label==looplink_ticks[looplink_ticks$Offset==0,"Label"][1],"xLabel"][1],
+                              yLabel=looplink_offsets[looplink_offsets$Label==looplink_ticks[looplink_ticks$Offset==0,"Label"][1],"yLabel"][1]
     )
     
     
     q<-q+ geom_text(data=looplink_text,
                     aes(
-                        x=index+Shift,
-                        y=var_index+Offset+tick_shift+text_shift,
+                        x=index+Shift+xLabel,
+                        y=var_index+Offset+tick_shift+text_shift+yLabel,
                         label=Label
                     ),
                     color="black",
