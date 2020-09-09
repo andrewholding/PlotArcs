@@ -10,6 +10,7 @@ highlightWidth<-3.5 #Width of Highlight
 highlightColor<-"#FFFF0070"
 stripeWidth<-4 #Width of Highlight
 stripeColor<-"#DDEEFF70"
+movieColor<-"#d0d0d0a0"
 setwd("~/Desktop/PlotArcs/R")
 
 arcs<-read.csv("allTrek.csv",stringsAsFactors = TRUE, check.names = FALSE)
@@ -125,7 +126,8 @@ p<-p + geom_path(data=as.data.frame(highlight),
                  aes(
                      x=index+Shift,
                      y=match(var, levels(arcs_long$variable))+Offset,
-                     group=index
+                     group=index,
+                     linetype="Recommended"
                  ),
                  
                  color=highlightColor,
@@ -153,10 +155,11 @@ p<-p + geom_path(data=as.data.frame(highlight),
                  aes(
                      x=index+Shift,
                      y=match(var, levels(arcs_long$variable))+Offset,
-                     group=index
+                     group=index,
+                    linetype="Movie"
                  ),
                  
-                 color="#d0d0d0a0",
+                 color=movieColor,
                  size=highlightWidth
 )
 
@@ -285,10 +288,23 @@ p <- p +  theme(axis.text.x = element_text(angle = -80, hjust = 0, vjust=0, size
 
 #Plotp 
 
-p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
+qq<-p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
+
+#This is a bit broken, but to add a second fill legend we add a different type
+#of legend and force it back into a fill legend.
+
 
 pdf("timeline.pdf", width=55, height=25,  useDingbats=FALSE)
-p +scale_fill_manual(values=FillColors)+scale_color_manual(values=FillColors) +labs(fill ="Category")+guides(color=FALSE)
+
+p + scale_fill_manual(values=FillColors)  +
+    labs(fill ="Category", linetype="Vertical Bars") + 
+    scale_linetype_manual(values = c(1,1),
+                          breaks = c("Recommended","Movie")
+                          ) + 
+    guides(color=FALSE,
+           linetype=guide_legend(override.aes = list(color = c(highlightColor,movieColor))
+            ) 
+    )
 dev.off()
 
 trekMatrix<-data.matrix(arcs[,-1:-5])
